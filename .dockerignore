@@ -1,0 +1,9 @@
+.git
+.portal
+.venv
+build
+dist
+__pycache__
+*.egg-info
+node_modules
+test-results

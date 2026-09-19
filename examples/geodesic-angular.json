@@ -1,0 +1,9 @@
+{
+  "a": 1,
+  "start_l": -5,
+  "beta": 0.6,
+  "angular_fraction": 0.1,
+  "kind": "timelike",
+  "duration": 20,
+  "steps": 4000
+}

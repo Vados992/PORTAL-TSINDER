@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Vados992/PORTAL-TSINDER/candidate.schema.json",
+  "title": "M04 research candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "default": "PFA-M04-R1",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,95}$"
+    },
+    "model_id": {
+      "const": "M04",
+      "type": "string",
+      "default": "M04"
+    },
+    "throat_radius_m": {
+      "type": "number",
+      "default": 1.0,
+      "minimum": 1e-12,
+      "maximum": 1000000000000.0
+    },
+    "cutoff_radius_m": {
+      "type": "number",
+      "default": 10.0,
+      "minimum": 1e-12,
+      "maximum": 1000000000000000.0
+    },
+    "speed_fraction_c": {
+      "type": "number",
+      "default": 0.01,
+      "minimum": 1e-12,
+      "maximum": 0.999999999
+    },
+    "payload_radius_m": {
+      "type": "number",
+      "default": 0.1,
+      "minimum": 0,
+      "maximum": 1000000000000.0
+    },
+    "payload_separation_m": {
+      "type": "number",
+      "default": 2.0,
+      "minimum": 0,
+      "maximum": 1000000000000.0
+    },
+    "tidal_limit_m_s2": {
+      "type": "number",
+      "default": 9.80665,
+      "minimum": 1e-15,
+      "maximum": 1e+30
+    },
+    "exterior_travel_time_s": {
+      "type": "number",
+      "default": 1.0,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    },
+    "wormhole_travel_time_s": {
+      "type": "number",
+      "default": 0.1,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    },
+    "mouth_time_offset_s": {
+      "type": "number",
+      "default": 0.0,
+      "minimum": -1000000000000000.0,
+      "maximum": 1000000000000000.0
+    },
+    "uncertainty_external_s": {
+      "type": "number",
+      "default": 0.0,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    },
+    "uncertainty_internal_s": {
+      "type": "number",
+      "default": 0.0,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    },
+    "uncertainty_offset_s": {
+      "type": "number",
+      "default": 0.0,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    },
+    "causal_guard_margin_s": {
+      "type": "number",
+      "default": 0.1,
+      "minimum": 0,
+      "maximum": 1000000000000000.0
+    }
+  },
+  "description": "Runtime additionally requires cutoff_radius_m >= throat_radius_m and rejects nonfinite numbers."
+}

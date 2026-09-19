@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portal-tsinder"
+version = "0.1.0"
+description = "PORTAL-FA research workbench, numerical experiments and simulated control"
+requires-python = ">=3.11"
+authors = [{name = "Vadym Tsinderhoz"}]
+dependencies = ["fastapi==0.115.12", "uvicorn==0.34.3", "sympy==1.14.0"]
+
+[project.optional-dependencies]
+test = ["httpx==0.28.1"]
+
+[project.scripts]
+portal-tsinder = "portal_tsinder.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["portal_tsinder*"]
+
+[tool.setuptools.package-data]
+portal_tsinder = ["web/*", "data/*.json", "data/*.sql"]

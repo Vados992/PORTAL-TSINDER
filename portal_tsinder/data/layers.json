@@ -1,0 +1,188 @@
+[
+  {
+    "id": "L00",
+    "name": "Контракт утверждений",
+    "module": "evaluation.py",
+    "status": "IMPLEMENTED_CLAIM_LOCK"
+  },
+  {
+    "id": "L01",
+    "name": "Реестр моделей",
+    "module": "data/models.json",
+    "status": "CATALOG_24_MODELS"
+  },
+  {
+    "id": "L02",
+    "name": "Символьная геометрия",
+    "module": "symbolic.py",
+    "status": "M00_M01_M04_ONLY"
+  },
+  {
+    "id": "L03",
+    "name": "Валидатор уравнений поля",
+    "module": "physics.py + symbolic.py",
+    "status": "M04_FORMAL_SOURCE_ONLY"
+  },
+  {
+    "id": "L04",
+    "name": "Топология и глобальные идентификации",
+    "module": "docs/SCIENCE.md",
+    "status": "FIXED_M04_TOPOLOGY_ONLY"
+  },
+  {
+    "id": "L05",
+    "name": "Геометрия горловины",
+    "module": "physics.py",
+    "status": "M04_EXACT"
+  },
+  {
+    "id": "L06",
+    "name": "Горизонты и захват",
+    "module": "physics.py",
+    "status": "STATIC_BENCHMARK_ONLY"
+  },
+  {
+    "id": "L07",
+    "name": "Геодезическая проходимость",
+    "module": "numerics.py",
+    "status": "M04_TEST_GEODESICS"
+  },
+  {
+    "id": "L08",
+    "name": "Приливные нагрузки",
+    "module": "physics.py",
+    "status": "RADIAL_TEST_TRAVELER_ONLY"
+  },
+  {
+    "id": "L09",
+    "name": "Энергетические условия",
+    "module": "physics.py",
+    "status": "M04_EXACT"
+  },
+  {
+    "id": "L10",
+    "name": "Микрофизика источника",
+    "module": "physics.py",
+    "status": "FORMAL_GHOST_ONLY_PHYSICAL_UNRESOLVED"
+  },
+  {
+    "id": "L11",
+    "name": "Квантовые энергетические неравенства",
+    "module": "quantum.py",
+    "status": "FLAT_FIELD_BENCHMARK_ONLY"
+  },
+  {
+    "id": "L12",
+    "name": "Полуклассическая обратная реакция",
+    "module": "evaluation.py",
+    "status": "UNRESOLVED"
+  },
+  {
+    "id": "L13",
+    "name": "Начальные данные ADM",
+    "module": "physics.py + nr.py",
+    "status": "STATIC_CONSTRAINT_AND_EXTERNAL_DIAGNOSTICS"
+  },
+  {
+    "id": "L14",
+    "name": "Нелинейная эволюция",
+    "module": "waves.py + nr.py",
+    "status": "TEST_FIELD_ONLY_GR_EVOLUTION_UNAVAILABLE"
+  },
+  {
+    "id": "L15",
+    "name": "Устойчивость к payload",
+    "module": "evaluation.py",
+    "status": "UNRESOLVED"
+  },
+  {
+    "id": "L16",
+    "name": "Мировые линии устьев",
+    "module": "anchors.py",
+    "status": "PIECEWISE_INERTIAL_DIAGNOSTIC"
+  },
+  {
+    "id": "L17",
+    "name": "Адресация и удаленный якорь",
+    "module": "anchors.py",
+    "status": "HMAC_SIMULATED_OR_SIGNAL_ANCHORS"
+  },
+  {
+    "id": "L18",
+    "name": "Глобальная причинность",
+    "module": "evaluation.py",
+    "status": "UNRESOLVED"
+  },
+  {
+    "id": "L19",
+    "name": "Детектор CTC",
+    "module": "causality.py",
+    "status": "FINITE_GRAPH_NEGATIVE_CYCLES_ONLY"
+  },
+  {
+    "id": "L20",
+    "name": "Причинный предохранитель",
+    "module": "causality.py + control.py",
+    "status": "REDUCED_SIMULATION_VETO"
+  },
+  {
+    "id": "L21",
+    "name": "Контроллер геометрии",
+    "module": "control.py",
+    "status": "SIMULATED_ANALOG_PID_ONLY"
+  },
+  {
+    "id": "L22",
+    "name": "Метрология поля и времени",
+    "module": "metrology.py",
+    "status": "CSV_S21_PHASE_DELAY"
+  },
+  {
+    "id": "L23",
+    "name": "Энергия, тепло и излучение",
+    "module": "control.py + metrology.py",
+    "status": "SIMULATED_BOUNDED_DRIVE_PASSIVE_LINE"
+  },
+  {
+    "id": "L24",
+    "name": "Payload interface",
+    "module": "evaluation.py",
+    "status": "CLEARANCE_AND_TIDAL_DIAGNOSTICS"
+  },
+  {
+    "id": "L25",
+    "name": "Физическая безопасность",
+    "module": "control.py",
+    "status": "SOFTWARE_VETO_NOT_CERTIFIED_HARDWARE"
+  },
+  {
+    "id": "L26",
+    "name": "Аналоговые эксперименты",
+    "module": "metrology.py + waves.py",
+    "status": "SIMULATION_AND_CSV_ANALYSIS"
+  },
+  {
+    "id": "L27",
+    "name": "Квантовый симулятор",
+    "module": "quantum.py",
+    "status": "TELEPORTATION_ONLY_NOT_SYK"
+  },
+  {
+    "id": "L28",
+    "name": "Верификация и валидация",
+    "module": "tests/",
+    "status": "EXECUTABLE_LOCAL_TESTS"
+  },
+  {
+    "id": "L29",
+    "name": "Происхождение и защита данных",
+    "module": "storage.py",
+    "status": "HASH_CHAIN_AND_MANIFESTS"
+  },
+  {
+    "id": "L30",
+    "name": "Межмодельный анализ и решение",
+    "module": "evaluation.py",
+    "status": "EXPLICIT_GATE_VECTOR_NO_AGGREGATE_PHYSICS_PASS"
+  }
+]

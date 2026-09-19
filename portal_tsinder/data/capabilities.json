@@ -1,0 +1,25 @@
+{
+  "software_version": "0.1.0",
+  "physical_actuator": false,
+  "physical_aperture": false,
+  "simulation_modes": [
+    "M04 geometry",
+    "test geodesic",
+    "linear field",
+    "PID analog",
+    "quantum information",
+    "RLGC line"
+  ],
+  "unavailable": [
+    "generic topology engine",
+    "full BSSN/CCZ4 evolution",
+    "state-specific curved QEI",
+    "semiclassical backreaction",
+    "laboratory source",
+    "formation of two mouths",
+    "global causality proof",
+    "hardware control drivers",
+    "SYK quantum gravity simulator"
+  ],
+  "source_document_sha256": "89c7050392fbe7b52f7293288bb26f5a365d7cffcf5d4f0f6be880d0e9052a1c"
+}

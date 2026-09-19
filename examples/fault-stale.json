@@ -1,0 +1,6 @@
+{
+  "duration_s": 10,
+  "target": 0.4,
+  "fault_at_s": 3,
+  "fault": "stale_sensor"
+}

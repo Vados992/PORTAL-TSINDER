@@ -1,0 +1,46 @@
+{
+  "generated_at_utc": "2026-09-19T11:52:49.715981+00:00",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "tests": {
+    "run": 59,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "package_fingerprint": "34cdeeea45ee79b6ed910a70a23f1f369902d95866b0f929c51cff735389459f",
+  "metrics": {
+    "geodesic_norm_error": 0.0,
+    "wave_relative_energy_drift": -1.4050646014687761e-15,
+    "wave_convergence": {
+      "scope": "M00_LINEAR_WAVE_MANUFACTURED_SOLUTION",
+      "grids": [
+        {
+          "points": 65,
+          "dx": 0.125,
+          "L2": 0.00016391725416612315
+        },
+        {
+          "points": 129,
+          "dx": 0.0625,
+          "L2": 4.097872130600844e-05
+        },
+        {
+          "points": 257,
+          "dx": 0.03125,
+          "L2": 1.024464329023611e-05
+        }
+      ],
+      "orders": [
+        2.0000208500668117,
+        2.000005215597966
+      ],
+      "status": "PASS"
+    },
+    "pid_final_setpoint_error": 4.484542182048301e-10,
+    "teleportation_fidelity": 0.9999999999999998
+  },
+  "physical_aperture": "NOT_IMPLEMENTED",
+  "independent_replication": "NOT_PERFORMED"
+}

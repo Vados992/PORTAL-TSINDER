@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PORTAL TSINDER · Research Workbench</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body>
+<aside class="sidebar"><div class="brand"><span class="brandmark">◉</span><div>PORTAL<br><strong>TSINDER</strong></div></div>
+<div class="edition">RESEARCH WORKBENCH · 0.1</div>
+<nav aria-label="Разделы"><button data-view="overview" class="active">01 <span>Обзор системы</span></button>
+<button data-view="geometry">02 <span>Геометрия M04</span></button>
+<button data-view="experiments">03 <span>Эксперименты</span></button>
+<button data-view="control">04 <span>Контроллер</span></button>
+<button data-view="registry">05 <span>Реестр и слои</span></button>
+<button data-view="audit">06 <span>Журнал и экспорт</span></button></nav>
+<div class="sidebar-bottom"><span class="dot"></span> ВЫЧИСЛИТЕЛЬНЫЙ СТЕНД<br><p>System Architect<br><b>Vadym Tsinderhoz</b></p><button id="logout" class="subtle">Завершить сеанс</button></div></aside>
+<main><header><div><div class="eyebrow">PORTAL-FA / PTD-0 + SIMULATED PTD-1</div><h1 id="page-title">Обзор системы</h1></div>
+<div class="header-state"><span class="dot"></span><span id="connection">Требуется вход</span></div></header>
+<div class="notice"><b>Исследовательская система</b><span>Результаты относятся к математическим моделям и симуляциям. Физический портал и исполнительный механизм не реализованы.</span></div>
+<div id="error" class="error" hidden role="alert"></div>
+<section id="overview" class="view">
+<div class="hero"><div><div class="eyebrow">FROM MODEL TO EVIDENCE</div><h2>Проверять геометрию.<br>Сохранять доказательства.</h2><p>Каждый расчёт имеет область применимости, исходные параметры и воспроизводимый результат. Неизвестная физика сохраняет статус UNRESOLVED.</p><button id="baseline" class="primary">Запустить эталон M04 <span>↗</span></button></div>
+<div class="orbital" aria-hidden="true"><div></div><div></div><div></div><div></div><span>M04<br><small>STATIC GEOMETRY</small></span></div></div>
+<div class="stats"><article><label>ГЕОМЕТРИЯ</label><strong id="geometry-status">Готова к расчёту</strong><p>Точная статическая модель M04</p></article><article><label>ФИЗИЧЕСКИЙ ЗАПУСК</label><strong class="amber">ЗАБЛОКИРОВАН</strong><p>PA-00 — PA-11: UNRESOLVED</p></article><article><label>ЭКСПЕРИМЕНТЫ</label><strong id="run-count">0</strong><p>Сохранённые запуски</p></article></div>
+<div class="grid"><article class="panel"><div class="panel-title"><h3>Профиль горловины</h3><span>r(l) / m</span></div><div id="overview-chart" class="chart empty">Запустите эталонный расчёт</div><p class="caption">Геометрический профиль, не изображение физического устройства.</p></article><article class="panel"><h3>Границы текущей реализации</h3><ul class="capability-list"><li><span class="dot"></span> Геометрия, геодезические и тензоры</li><li><span class="dot"></span> Волны и управление симуляцией</li><li><span class="dot"></span> Квантовый протокол и метрология</li><li class="amber">○ Создание устьев: модель отсутствует</li><li class="amber">○ Нелинейная GR-устойчивость: не решена</li></ul></article></div>
+</section>
+<section id="geometry" class="view" hidden><div class="grid form-grid"><article class="panel"><h3>Параметры кандидата</h3><p class="caption">M04 · Φ = 0 · b(r) = r₀²/r · единицы SI</p><form id="candidate-form">
+<label>Радиус горловины, м<input name="throat_radius_m" type="number" value="1" min="0.000000000001" step="any" required></label>
+<label>Ареальный cutoff, м<input name="cutoff_radius_m" type="number" value="10" step="any" required></label>
+<label>Скорость, доля c<input name="speed_fraction_c" type="number" value="0.01" min="0.000000000001" max="0.999999999" step="any" required></label>
+<label>Радиус payload, м<input name="payload_radius_m" type="number" value="0.1" min="0" step="any" required></label>
+<label>Сдвиг часов устьев, с<input name="mouth_time_offset_s" type="number" value="0" step="any" required></label>
+<label>Запас causal guard, с<input name="causal_guard_margin_s" type="number" value="0.1" min="0" step="any" required></label>
+<button class="primary" type="submit">Вычислить и сохранить</button></form></article>
+<article class="panel"><div class="panel-title"><h3>Результат</h3><span id="candidate-hash">—</span></div><div id="geometry-chart" class="chart empty">Ожидание расчёта</div><div id="metrics" class="metrics"></div><p class="caption">Интеграл плотности энергии не является энергией батареи или ADM-массой.</p></article></div>
+<article class="panel"><h3>Независимые статусы проверок</h3><div id="gates" class="table-wrap empty">Результаты появятся после расчёта</div></article></section>
+<section id="experiments" class="view" hidden><div class="grid form-grid"><article class="panel"><h3>Воспроизводимый эксперимент</h3><label>Модуль<select id="experiment-kind"></select></label><p id="experiment-note" class="caption"></p><label>Параметры JSON<textarea id="experiment-config" rows="15" spellcheck="false"></textarea></label><button id="experiment-run" class="primary">Выполнить и сохранить</button><label class="file-label">Загрузить JSON конфигурацию<input id="config-file" type="file" accept=".json,application/json"></label></article>
+<article class="panel"><div class="panel-title"><h3>Расчётный результат</h3><span id="experiment-id">—</span></div><div id="experiment-chart" class="chart empty">Выберите эксперимент</div><pre id="experiment-result">Нет результата</pre></article></div></section>
+<section id="control" class="view" hidden><div class="control-heading"><div><div class="eyebrow">SECOND-ORDER PLANT / DIMENSIONLESS RESPONSE</div><h2>Стабилизация симуляции</h2><p>PID регулирует математический аналог. Физических выходов нет.</p></div><span class="badge" id="control-state">OFF</span></div>
+<div class="toolbar"><button data-command="initialize">Самотест</button><button data-command="arm">ARM ANALOG</button><button data-command="start" class="primary">START</button><button data-command="hold">HOLD</button><button data-command="close">CLOSE</button><button data-command="off">OFF</button><button data-command="estop" class="danger">E-STOP</button><button id="save-control">Сохранить телеметрию</button></div>
+<div class="grid"><article class="panel"><h3>Обратная связь</h3><div id="control-chart" class="chart"></div><p id="control-reason" class="caption"></p></article><article class="panel"><h3>Уставка и отказы</h3><form id="setpoint-form"><label>Уставка [−0.8, 0.8]<input id="setpoint" type="number" min="-0.8" max="0.8" step="0.05" value="0.4" required></label><button type="submit">Применить</button></form><label>Инъекция отказа симуляции<select id="fault-kind"><option value="stale_sensor">Устаревшие измерения</option><option value="causal_negative">Отрицательный causal margin</option><option value="guard_boundary">Граница causal guard</option><option value="provenance">Ошибка provenance</option><option value="clock">Ошибка часов</option></select></label><button id="inject-fault" class="danger">Внести отказ</button><p class="caption">LOCKOUT сохраняется после перезапуска. Сброс доступен только через локальную команду после остановки сервиса и регистрации проверки.</p><div id="control-metrics" class="metrics"></div></article></div></section>
+<section id="registry" class="view" hidden><article class="panel"><h3>Реестр M00–M23</h3><p class="caption">Запись в каталоге не означает наличие solver. У каждой модели явно указан исполняемый объём.</p><div id="models-table" class="table-wrap"></div></article><article class="panel"><h3>Покрытие архитектуры L00–L30</h3><div id="layers-table" class="table-wrap"></div></article></section>
+<section id="audit" class="view" hidden><div class="panel-title"><h2>История экспериментов</h2><button id="refresh-audit">Обновить и проверить</button></div><div class="notice" id="audit-status">Проверка журнала</div><article class="panel"><div id="runs-table" class="table-wrap"></div></article><article class="panel"><h3>Журнал событий</h3><div id="events-table" class="table-wrap"></div></article></section>
+<footer>PORTAL TSINDER · PORTAL-FA v1.0 research architecture · No claim of a physical aperture</footer></main>
+<dialog id="login"><form id="login-form"><div class="eyebrow">LOCAL RESEARCH SESSION</div><h2>PORTAL TSINDER</h2><p>Введите токен локального сервиса.</p><label>Operator token<input id="token" type="password" autocomplete="off" required minlength="32"></label><p class="caption">Команда: <code>python -m portal_tsinder token</code><br>Для другого каталога добавьте <code>--data-dir PATH</code> перед <code>token</code>.</p><button class="primary" type="submit">Открыть стенд</button><p id="login-error" class="amber" role="alert"></p></form></dialog>
+<script src="/assets/app.js" defer></script></body></html>
