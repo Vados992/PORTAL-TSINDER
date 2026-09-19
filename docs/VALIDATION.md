@@ -24,6 +24,14 @@ Performed 2026-09-19 in Linux, Python 3.12.14. Actual machine results are in
 | Clean virtual environment dependency install and wheel build/install | PASS |
 | Installed package run outside source directory | Six demo experiments completed; audit PASS |
 | Frontend and browser-test JavaScript syntax | PASS (`node --check`) |
+| GitHub Actions Python 3.11 / 3.12 / 3.13 | PASS: test suite, demo and audit on all three versions |
+| GitHub Actions Chromium end-to-end | PASS: `node scripts/browser-smoke.cjs` |
+
+Remote results were verified from the completed jobs of
+[GitHub Actions run 35455905840](https://github.com/Vados992/PORTAL-TSINDER/actions/runs/35455905840)
+for commit `f2e7700f114cdfde942ff096c4233ea790c999ab` on 2026-09-19.
+All four jobs completed successfully. The following documentation/license update
+does not change the scientific, service, frontend or test code validated by that run.
 
 The exact-zero radial geodesic normalization error is an outcome of this simple
 constant-velocity benchmark, not a universal accuracy guarantee. The angular test
@@ -32,15 +40,14 @@ second-order plant, not to spacetime geometry.
 
 ## Not executed / limitations
 
-- **Full browser end-to-end / visual QA: NOT EXECUTED.** The environment could
-  install the test dependencies, but would not execute its Chromium binary
-  (`EACCES`). Its supported cloud browser rejected the local service address
-  (`ERR_BLOCKED_BY_CLIENT`). These are environment limitations, not passing tests.
-  `scripts/browser-smoke.cjs` supplies a reproducible test for a compatible runner.
+- **Local browser execution: unavailable.** The build environment would not
+  execute its Chromium binary (`EACCES`), and its supported cloud browser rejected
+  the local service address (`ERR_BLOCKED_BY_CLIENT`). The same end-to-end test
+  subsequently passed on GitHub Actions. Manual visual review was not performed.
 - **Docker image/Compose: NOT EXECUTED.** Docker is unavailable in the build
   environment; recipes are supplied, not represented as a tested deployment.
-- **Windows/macOS and Python 3.11/3.13: NOT EXECUTED locally.** A CI matrix is
-  supplied; its results must be checked separately on GitHub Actions.
+- **Windows/macOS: NOT EXECUTED.** Python 3.11/3.13 were tested on Linux in
+  GitHub Actions, not in the local build environment.
 - **No hardware, physical aperture, nonlinear numerical relativity, independent
   laboratory, second CAS or independent-team replication was tested.**
 - The full 24-model catalog does not have 24 implemented solvers. See traceability.
@@ -65,5 +72,5 @@ Do not use this option to bypass an execution restriction.
 
 After any source change, rerun relevant checks and regenerate the release manifest:
 `python scripts/release_manifest.py`. The manifest intentionally excludes itself.
-GitHub Actions is configured; no successful remote CI result is claimed by this
-document merely because the workflow file exists.
+The linked GitHub Actions run records the observed remote results; the presence
+of a workflow file alone is not evidence of a successful test.
